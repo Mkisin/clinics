@@ -75,6 +75,7 @@ if (registrationForm) {
 // Добавлять снимки только к соответствующему мероприятию.
 // При одном снимке карточка остаётся статичной.
 const historyAlbums = {
+  'june-2026': ['old/15_1.jpg', 'old/15_2.jpg', 'old/15_3.jpg', 'old/15_4.jpg', 'old/15_5.jpg'],
   'december-2025': ['old/11_1.jpg', 'old/11_2.jpg', 'old/11_3.jpg', 'old/11_4.jpg', 'old/11_5.jpg'],
   'june-2025': ['old/12_1.png', 'old/12-2.png', 'old/12_3.png', 'old/12-4.png', 'old/12_5.png'],
   'december-2024': ['old/13_1.jpeg', 'old/13_2.jpeg', 'old/13-3.jpeg', 'old/13_4.jpeg', 'old/13_5.jpeg'],
