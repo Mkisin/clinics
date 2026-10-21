@@ -7,7 +7,7 @@ import sys
 from html import escape
 
 root = Path(__file__).resolve().parents[1]
-source = next((root / 'doc').glob('Рабочая*.docx'))
+source = next((root / 'Doc211026').glob('Рабочая*.docx'))
 ns = {'w': 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 with ZipFile(source) as archive:
     xml = ET.fromstring(archive.read('word/document.xml'))
@@ -36,7 +36,7 @@ def source_bio(name, moderator=False):
     matches = [p.split(',', 1)[1].strip() for p in paragraphs if p.startswith(name + ',')]
     return (matches[-1] if moderator else matches[0]) if matches else None
 if '--fix-bios' in sys.argv:
-    vip_start = html.index('<details class="program-item" id="program-vip">')
+    vip_start = len(html)
     def align(match):
         expected = source_bio(match[2], match.start() >= vip_start and match[2] == 'Евгений Бойченко')
         return match[1] + escape(expected) + match[4] if expected else match[0]
@@ -44,14 +44,14 @@ if '--fix-bios' in sys.argv:
     (root / 'index.html').write_text(html, encoding='utf-8')
 slots = [('09:00', '10:00', 'Аналитика', 'analytics'), ('10:30', '12:00', 'Экономика', 'economics'),
          ('12:30', '14:00', 'Маркетинг', 'marketing'), ('15:00', '16:30', 'Кадры', 'team'),
-         ('17:00', '18:30', 'Стратегия управления', 'management'), ('19:00', '20:00', 'ВИП-сессия', 'vip')]
+         ('17:00', '18:30', 'Стратегия управления', 'management')]
 positions = [next(i for i,p in enumerate(paragraphs) if p.startswith(start) and label in p and '|' not in p)
              for start, end, label, key in slots]
 print('Источник:', source.name)
 failures = []
 count = 0
 for number, (start, end, label, key) in enumerate(slots):
-    section = paragraphs[positions[number]+1:positions[number+1] if number < 5 else len(paragraphs)]
+    section = paragraphs[positions[number]+1:positions[number+1] if number + 1 < len(slots) else len(paragraphs)]
     title_end = next(i for i,p in enumerate(section) if ('|' in p if key != 'vip' else p.startswith('Сессия будет')))
     speaker_start = next(i for i,p in enumerate(section) if p in ('Спикер:', 'Планируемый спикер:', 'Приглашенный гость, спикер:'))
     expected = [norm(p) for p in section[title_end:speaker_start]]
@@ -73,8 +73,9 @@ for number, (start, end, label, key) in enumerate(slots):
     count += len(expected)
     print(label + ': ' + str(len(expected)) + ' абзацев/пунктов сверено')
 assert not failures, failures
-print('PASS: 6 заголовков, 6 интервалов в программе и сетке,', count, 'абзацев/пунктов — точное совпадение, кроме пробелов.')
-vip_start = html.index('<details class="program-item" id="program-vip">')
+print('PASS: 5 заголовков, 5 интервалов в программе и сетке,', count, 'абзацев/пунктов — точное совпадение, кроме пробелов.')
+assert 'program-vip' not in html and 'Фомин' not in html and 'ВИП-сессии' not in html
+vip_start = len(html)
 bios = 0
 for match in re.finditer(bio_pattern, html, re.S):
     expected = source_bio(match[2], match.start() >= vip_start and match[2] == 'Евгений Бойченко')
@@ -84,7 +85,7 @@ for match in re.finditer(bio_pattern, html, re.S):
 print('PASS: описания спикеров:', bios)
 schedule_block = re.search(r'<section class="schedule content".*?</section>', html, re.S).group(0)
 for paragraph in paragraphs:
-    if re.match(r'^\d{2}:\d{2}', paragraph) and any(word in paragraph for word in ['Перерыв', 'Обед', 'Регистрация']):
+    if re.match(r'^\d{2}:\d{2}', paragraph) and any(word in paragraph for word in ['Перерыв', 'Обед', 'Регистрация', 'Фуршет']):
         normalized = lambda s: norm(s).replace('–', '-').lower()
         assert normalized(paragraph) in normalized(plain(schedule_block)), paragraph
-print('PASS: регистрация и все перерывы. Уточнения пользователя: Магерова — спикер; кадровый спикер на согласовании; фото Фомина — заглушка.')
+print('PASS: регистрация, все перерывы и заключительный фуршет. Уточнение пользователя: Магерова — спикер; кадровый спикер в процессе согласования.')
