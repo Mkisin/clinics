@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.deploy/
+index_2025.html
+old/*.docx
+old/*.pdf

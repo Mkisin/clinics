@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+node_modules
+.git
+*.log
+.deploy
+index_2025.html
