@@ -27,6 +27,7 @@ if (registrationForm) {
   registrationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (sending || !registrationForm.reportValidity()) return;
+    status.classList.remove('registration-status-success');
     if (window.location.protocol === 'file:') {
       status.textContent = 'Для отправки заявки откройте сайт через сервер.';
       return;
@@ -57,6 +58,7 @@ if (registrationForm) {
         return;
       }
       registrationForm.reset();
+      status.classList.add('registration-status-success');
       status.textContent = 'Спасибо! Ваша заявка принята. Менеджер свяжется с вами.';
     } catch {
       status.textContent = 'Не удалось получить подтверждение заявки. Проверьте соединение и свяжитесь с организатором перед повторной отправкой.';

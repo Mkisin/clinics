@@ -184,6 +184,7 @@ a.schedule-session:focus-visible, .program-item summary:focus-visible { outline:
 .registration-submit:hover { background: #05d8b0; color: #000; }
 .registration-submit:focus-visible { outline: 3px solid var(--teal); outline-offset: 4px; }
 .registration-status { margin: 14px 0 0; font-size: 12px; line-height: 1.5; }
+.registration-status-success { font-size: 14px; color: #d00000; }
 .registration-status:empty { display: none; }
 @media (max-width: 700px) {
   .registration-frame { padding-block: 30px 45px; }

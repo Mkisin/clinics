@@ -56,11 +56,11 @@ function createRegister({ request = (...args) => fetch(...args), env = process.e
     const parts = name.split(/\s+/);
     const payload = {
       fields: {
-        TITLE: env.BITRIX_LEAD_TITLE || 'Экономика частной клиники-2027 — 08.12.2026',
+        TITLE: env.BITRIX_LEAD_TITLE || 'ф-п-Клиники-26-12-гб',
         NAME: parts[0], LAST_NAME: parts.slice(1).join(' '), COMPANY_TITLE: company,
         EMAIL: [{ VALUE: email, VALUE_TYPE: 'WORK' }],
         PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
-        SOURCE_ID: 'WEB', SOURCE_DESCRIPTION: ['лид с сайта', pageUrl].filter(Boolean).join(' '),
+        SOURCE_ID: 'WEB', SOURCE_DESCRIPTION: [['лид с сайта', pageUrl].filter(Boolean).join(' '), promo && `Промокод: ${promo}`].filter(Boolean).join('\n'),
         ASSIGNED_BY_ID: assignedBy,
         COMMENTS: [`Форма: ${EVENT_TITLE}`, pageTitle && `Страница: ${pageTitle}`, pageUrl && `URL: ${pageUrl}`, promo && `Промокод: ${promo}`, 'Согласие на обработку персональных данных: получено'].filter(Boolean).join('\n'),
       },

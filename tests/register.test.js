@@ -22,7 +22,8 @@ test('создаёт лид с полями нового мероприятия,
   assert.equal(payload.fields.LAST_NAME, 'Иванов');
   assert.equal(payload.fields.ASSIGNED_BY_ID, 563);
   assert.equal(payload.fields.SOURCE_ID, 'WEB');
-  assert.match(payload.fields.TITLE, /08\.12\.2026/);
+  assert.equal(payload.fields.TITLE, 'ф-п-Клиники-26-12-гб');
+  assert.match(payload.fields.SOURCE_DESCRIPTION, /Промокод: CLUB/);
   assert.match(payload.fields.COMMENTS, /Промокод: CLUB/);
 });
 test('не отправляет в Битрикс данные без согласия или с неверным телефоном', async () => {
