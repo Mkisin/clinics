@@ -234,7 +234,7 @@ a.schedule-session:focus-visible, .program-item summary:focus-visible { outline:
 .partner-medical { width: 216px; }
 .contacts { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 40px; padding-block: 42px; }
 .contacts-details { width: 477px; max-width: 100%; justify-self: center; text-align: left; }
-.contacts-brand { display: block; width: 477px; max-width: 100%; padding: 22px 30px; margin: 0 auto 27px; background: #008e75; }
+.contacts-brand { display: block; width: 477px; max-width: 100%; margin: 0 auto 27px; }
 .contacts-logo { display: block; width: 100%; height: auto; }
 .contacts address { font-style: normal; font-size: 12px; line-height: 1.6; }
 .contacts a { color: #000; text-decoration: none; }
