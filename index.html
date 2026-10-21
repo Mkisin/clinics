@@ -3,87 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <meta name="theme-color" content="#008e75">
   <title>Экономика частной клиники-2027 — 8 декабря 2026, Москва</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
-    <section class="hero hero-new" aria-labelledby="congress-title">
-      <div class="hero-inner">
-        <svg class="hero-line" viewBox="0 0 1040 600" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#a5a5a5"/>
-              <stop offset="0.59" stop-color="#c5c5c5"/>
-              <stop offset="0.65" stop-color="#eeeeee"/>
-              <stop offset="1" stop-color="#545454"/>
-            </linearGradient>
-          </defs>
-          <path d="M1018 0 V365 H608 A38 38 0 0 0 570 403 V600" fill="none" stroke="url(#silver)" stroke-width="20"/>
-        </svg>
-        <p class="eyebrow">Встреча клуба директоров частных клиник</p>
-        <h1 id="congress-title">ЭКОНОМИКА ЧАСТНОЙ<br>КЛИНИКИ-2027</h1>
-        <div class="hero-bottom">
-          <div class="hero-invitation">
-            <p class="hero-description">Стратегии роста прибыли<br>для устойчивого развития бизнеса</p>
-            <a class="participate" href="#registration">СТАТЬ УЧАСТНИКОМ</a>
-          </div>
-          <div class="event-details">
-            <time datetime="2026-12-08"><strong>08/12</strong><span>2026</span></time>
-            <p>Москва / Гостиница<br>Ленинградская</p>
-          </div>
+    <section class="hero" aria-labelledby="event-title">
+      <div class="container hero-inner">
+        <img class="hero-art" src="assets/redesign/hero-1.png" alt="" aria-hidden="true" width="1000" height="1000">
+        <div class="hero-copy">
+        <p class="hero-eyebrow">Встреча клуба директоров частных клиник</p>
+        <h1 id="event-title">ЭКОНОМИКА <span>ЧАСТНОЙ<br class="desktop-break"> КЛИНИКИ</span>-2027</h1>
+        <div class="event-details">
+          <div><p class="label">Дата проведения</p><time datetime="2026-12-08"><strong>8 декабря</strong><span>2026</span></time></div>
+          <div><p class="label">Место проведения</p><strong>Москва</strong><span>Гостиница Ленинградская</span></div>
+        </div>
+        <div class="hero-invitation">
+          <p>Стратегии роста прибыли<br>для устойчивого развития бизнеса</p>
+          <a class="button" href="#registration-dialog" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog"><span aria-hidden="true">→</span> Стать участником</a>
+        </div>
         </div>
       </div>
     </section>
-    <section class="benefits" aria-labelledby="benefits-title">
-      <div class="content">
-        <h2 id="benefits-title">ДЛЯ ВАС</h2>
-        <div class="benefits-grid">
-          <article class="benefit">
-            <svg class="cross" viewBox="0 0 74 74" aria-hidden="true"><path d="M25 1H48V25H73V48H48V73H25V48H1V25H25Z"/></svg>
-            <p><strong>Финансовая устойчивость клиники:</strong> выявление скрытых потерь, управление себестоимостью и повышение рентабельности бизнеса</p>
-          </article>
-          <article class="benefit">
-            <svg class="cross" viewBox="0 0 74 74" aria-hidden="true"><path d="M25 1H48V25H73V48H48V73H25V48H1V25H25Z"/></svg>
-            <p><strong>Рост пациентопотока:</strong> сегментация базы, персонализированные коммуникации и управление возвращаемостью пациентов</p>
-          </article>
-          <article class="benefit">
-            <svg class="cross" viewBox="0 0 74 74" aria-hidden="true"><path d="M25 1H48V25H73V48H48V73H25V48H1V25H25Z"/></svg>
-            <p><strong>Производительность медицинской команды:</strong> загрузка врачей, работающие KPI, мотивация и удержание сильных специалистов</p>
-          </article>
-          <article class="benefit">
-            <svg class="cross" viewBox="0 0 74 74" aria-hidden="true"><path d="M25 1H48V25H73V48H48V73H25V48H1V25H25Z"/></svg>
-            <p><strong><span>Стратегия развития-2027:</span></strong> выбор бизнес-модели, совершенствование управления и повышение эффективности подразделений клиники</p>
-          </article>
+    <section class="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="label">О встрече</p>
+        <div class="about-intro">
+          <h2 id="about-title">Закрытый бизнес-клуб<br>для первых лиц<br>частных клиник</h2>
+          <p>По одному профильному эксперту на сессию, расширенные ответы на вопросы с разбором персональных кейсов и интерактивный клубный диалог. Акцент на практику топовых клиник и профессиональное общение.</p>
+        </div>
+        <div class="benefits">
+          <article><h3>Практика топовых клиник</h3><p>Контроль затрат, расчёт себестоимости, маржинальность и <strong>адаптация бизнес-модели</strong>.</p></article>
+          <article><h3>Разбор ваших кейсов</h3><p><strong>Расширенные ответы на вопросы</strong> в каждом блоке с разбором персональных кейсов участников.</p></article>
+          <article><h3>Клубный диалог</h3><p><strong>Равный диалог со спикерами и практиками</strong>, интерактивное обсуждение управленческих задач.</p></article>
+          <article><h3>Профессиональные связи</h3><p>Общение участников и спикеров. <strong>Вечерний фуршет с 18:30 до 19:00</strong> для закрепления контактов.</p></article>
+        </div>
+      </div>
+      <div class="photo-strip" aria-label="Фотографии прошедших мероприятий">
+        <img src="old/15_1.jpg" alt="Прошедший конгресс: фото 1" width="460" height="240" loading="lazy">
+        <img src="old/15_2.jpg" alt="Прошедший конгресс: фото 2" width="460" height="240" loading="lazy">
+        <img src="old/15_3.jpg" alt="Прошедший конгресс: фото 3" width="460" height="240" loading="lazy">
+        <img src="old/15_4.jpg" alt="Прошедший конгресс: фото 4" width="460" height="240" loading="lazy">
+        <img src="old/15_5.jpg" alt="Прошедший конгресс: фото 5" width="460" height="240" loading="lazy">
+      </div>
+    </section>
+    <section class="audience" aria-labelledby="audience-title">
+      <div class="container">
+        <p class="label">Для кого</p>
+        <h2 id="audience-title">Программа для тех, кто управляет медицинским бизнесом и берет ответственность за результат</h2>
+        <div class="audience-grid">
+          <article><img src="assets/redesign/director_head_boss.svg" alt="" width="40" height="40"><h3>Собственники клиник</h3><p>Клиника-2027: пора менять бизнес-модель? Как адаптировать стратегию к новым условиям рынка и обеспечить устойчивый рост бизнеса?</p></article>
+          <article><img src="assets/redesign/analyst_analysis.svg" alt="" width="40" height="40"><h3>Управляющие</h3><p>Где буксует клиника? Как выявить слабые места в бизнес-процессах, устранить управленческие сбои и повысить эффективность подразделений?</p></article>
+          <article><img src="assets/redesign/doctor_professions.svg" alt="" width="40" height="40"><h3>Главврачи</h3><p>Система менеджмента качества – панацея для руководителя? Как выстроить СМК, чтобы врачи сами поддерживали ее работу, пациенты получали качественную медпомощь и рекомендовали клинику друзьям?</p></article>
+          <article><img src="assets/redesign/accountant_calculator.svg" alt="" width="40" height="40"><h3>Финансовые директора</h3><p>Экономика медуслуг: как рассчитать себестоимость и маржинальность врачебного приема, выявить прибыльные и убыточные направления?</p></article>
+          <article><img src="assets/redesign/marketer_advertising_promotion.svg" alt="" width="40" height="40"><h3>Руководители по маркетингу</h3><p>Управление LTV пациента: как выстроить систему персонализированных точек касания, повысить возвращаемость и выручку от существующей базы?</p></article>
+          <article><img src="assets/redesign/assistant_talk_consultant.svg" alt="" width="40" height="40"><h3>HR-директора</h3><p>Зарплатная гонка: как сдержать рост ФОТ и сохранить сильных специалистов без просадки в прибыли клиники?</p></article>
         </div>
       </div>
     </section>
-<section class="speakers speakers-new" aria-label="Ключевые спикеры"><div class="speakers-grid"><article class="speaker"><img src="assets/img/shubina.jpg" alt="Дарья Шубина" width="260" height="260" loading="lazy"><div class="speaker-caption"><p class="speaker-status">Планируемый спикер</p><h3>Дарья Шубина</h3><p>Генеральный директор, Eqiva. Главный специалист по исследованиям рынка медуслуг и индустрии здравоохранения для ведущих игроков рынка (среди клиентов – клиники «Мать и дитя», ЕМС, «Медси», «Эксперт», «Медскан» и др.).</p></div></article><article class="speaker"><img src="assets/img/egorova.jpg" alt="Тамара Егорова" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Тамара Егорова</h3><p>Операционный Директор, Клиника ЕМС (Один из лидеров рейтинга Аналитического центра Vademecum «ТОП200 частных многопрофильных клиник России»).</p></div></article><article class="speaker"><img src="assets/img/boichenko.jpg" alt="Евгений Бойченко" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Евгений Бойченко</h3><p>Сооснователь, Клиника Рассвет. Эксперт в медицинском маркетинге и коммуникациях. Преподаватель, Высшая школа организации и управления здравоохранением. Преподаватель и член экспертного совета программы EMBA, Высшая школа бизнеса МГУ.</p></div></article><article class="speaker"><div class="speaker-placeholder" role="img" aria-label="Спикер в процессе согласования"><span>Спикер в процессе согласования</span></div><div class="speaker-caption"><h3>Спикер в процессе согласования</h3><p>Секция «Кадры».</p></div></article><article class="speaker"><img src="assets/img/magerova.jpg" alt="Анна Магерова" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Анна Магерова</h3><p>Врач-кардиолог, к.м.н. Директор по развитию, Сеть клиник Балтмед (Санкт-Петербург). Бизнес-аналитик, СмартДельтаСистемс (Москва)</p></div></article></div></section>
-<section class="schedule content" aria-labelledby="schedule-title"><h2 id="schedule-title">СЕТКА МЕРОПРИЯТИЯ</h2><div class="schedule-linear">
-<p class="schedule-break"><time>08:00–09:00</time> Регистрация. Приветственный кофе</p>
-<a class="schedule-session schedule-event" href="#program-analytics" data-program="program-analytics"><span>09:00–10:00 · Аналитика</span><strong>ЧАСТНАЯ МЕДИЦИНА–2026: ИТОГИ И ПРОГНОЗЫ. КАК ИЗМЕНИЛСЯ ПАЦИЕНТ, РЫНОК И КОНКУРЕНЦИЯ – И ЧТО ЭТО ЗНАЧИТ ДЛЯ ВАШЕЙ КЛИНИКИ</strong></a>
-<p class="schedule-break">10:00–10:30 Перерыв, кофе-пауза</p>
-<a class="schedule-session schedule-event" href="#program-economics" data-program="program-economics"><span>10:30–12:00 · Экономика</span><strong>ФИНАНСОВАЯ УСТОЙЧИВОСТЬ КЛИНИКИ: КАК НАЙТИ СКРЫТЫЕ ПОТЕРИ И ПОВЫСИТЬ РЕНТАБЕЛЬНОСТЬ БИЗНЕСА В 2027 ГОДУ</strong></a>
-<p class="schedule-break">12:00–12:30 Перерыв, кофе-пауза</p>
-<a class="schedule-session schedule-event" href="#program-marketing" data-program="program-marketing"><span>12:30–14:00 · Маркетинг</span><strong>СТРАТЕГИИ УПРАВЛЕНИЯ ПАЦИЕНТОПОТОКОМ: СЕГМЕНТАЦИЯ ПАЦИЕНТСКОЙ БАЗЫ, ПЕРЕСТРОЙКА КАНАЛОВ КОММУНИКАЦИИ И УПРАВЛЕНИЕ НЕЙРОВЫДАЧЕЙ</strong></a>
-<p class="schedule-break">14:00–15:00 Обед</p>
-<a class="schedule-session schedule-event" href="#program-team" data-program="program-team"><span>15:00–16:30 · Кадры</span><strong>ВРАЧИ И ПРИБЫЛЬ: ЭФФЕКТИВНЫЕ ПОДХОДЫ К УПРАВЛЕНИЮ ПРОИЗВОДИТЕЛЬНОСТЬЮ МЕДИЦИНСКОЙ КОМАНДЫ</strong></a>
-<p class="schedule-break">16:30–17:00 Перерыв, кофе-пауза</p>
-<a class="schedule-session schedule-event" href="#program-management" data-program="program-management"><span>17:00–18:30 · Стратегия управления</span><strong>УПРАВЛЕНЧЕСКАЯ СИСТЕМА КЛИНИКИ: КАКИЕ РЕШЕНИЯ ОБЕСПЕЧАТ ВЫСОКУЮ ПРИБЫЛЬ И КАЧЕСТВО МЕДИЦИНСКОЙ ПОМОЩИ В 2027 ГОДУ?</strong></a>
-<p class="schedule-break">18:30–19:00 | Фуршет. Свободное общение участников и спикеров</p>
-</div></section>
-<section class="program content" aria-labelledby="program-title"><h2 id="program-title">ДЕЛОВАЯ ПРОГРАММА*</h2><div class="program-list">
-<details class="program-item" id="program-analytics">
-      <summary><span class="program-time"><span>09:00</span><span>10:00</span></span>
-      <span class="program-marker" aria-hidden="true"></span>
-      <span class="program-heading"><span>Аналитика</span><strong>ЧАСТНАЯ МЕДИЦИНА–2026: ИТОГИ И ПРОГНОЗЫ. КАК ИЗМЕНИЛСЯ ПАЦИЕНТ, РЫНОК И КОНКУРЕНЦИЯ – И ЧТО ЭТО ЗНАЧИТ ДЛЯ ВАШЕЙ КЛИНИКИ</strong></span>
-      <span class="program-toggle" aria-hidden="true"></span></summary><div class="program-body">
+    <section class="topics" aria-labelledby="topics-title">
+      <div class="container">
+        <p class="label">Главные темы</p>
+        <div class="topics-header">
+          <h2 id="topics-title">Стратегии роста прибыли<br>для устойчивого развития бизнеса</h2>
+          <div class="topics-controls" aria-label="Переключение тем">
+            <button type="button" class="topics-prev" aria-label="Предыдущие темы" aria-controls="topics-slider"><span aria-hidden="true"></span></button>
+            <button type="button" class="topics-next" aria-label="Следующие темы" aria-controls="topics-slider"><span aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="topics-slider" id="topics-slider" tabindex="0" role="region" aria-label="Восемь главных тем программы">
+          <article class="topic-card"><h3>Диагностика частного здравоохранения.</h3><p>Динамика спроса на медуслуги, ключевые вызовы и векторы развития отрасли по итогам 2026 года</p></article>
+          <article class="topic-card"><h3>Экономика медуслуг:</h3><p>как рассчитать себестоимость и маржинальность врачебного приема, выявить прибыльные и убыточные направления?</p></article>
+          <article class="topic-card"><h3>Ценообразование в условиях медицинской инфляции.</h3><p>Как компенсировать рост налоговой нагрузки, ФОТ и затрат на расходники?</p></article>
+          <article class="topic-card"><h3>Управление LTV пациента:</h3><p>как выстроить систему персонализированных точек касания, повысить возвращаемость и выручку от существующей базы?</p></article>
+          <article class="topic-card"><h3>Нейровыдача:</h3><p>как ИИ меняет поиск медицинских услуг? Как управлять нейросетями, чтобы обеспечить стабильный поток пациентов?</p></article>
+          <article class="topic-card"><h3>Штат под реальную загрузку:</h3><p>как рассчитать потребность в медперсонале с учётом пациентопотока, загрузки кабинетов и планов развития клиники?</p></article>
+          <article class="topic-card"><h3>Система мотивации и KPI:</h3><p>как оценивать вклад специалиста в прибыль клиники, учитывая качество лечения и удовлетворенность пациентов?</p></article>
+          <article class="topic-card"><h3>Клиника-2027:</h3><p>пора менять бизнес-модель? Как адаптировать стратегию к новым условиям рынка и обеспечить устойчивый рост бизнеса?</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="motivation container" aria-labelledby="motivation-title">
+      <div class="motivation-content">
+        <h2 id="motivation-title"><span>Прибыль теряется.</span> <span>Пациенты уходят.</span> <span>ФОТ растёт.</span></h2>
+        <p>Разбор управленческих задач вашей клиники: задайте вопросы эксперту, обсудите свою ситуацию и получите практические рекомендации для принятия взвешенных решений.</p>
+        <button class="button motivation-button" type="button" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog">Стать участником</button>
+      </div>
+    </section>
+    <section class="experts" aria-labelledby="experts-title">
+      <div class="container">
+        <p class="label">Эксперты</p>
+        <div class="topics-header">
+          <h2 id="experts-title">Эксперты, ведущие клуб</h2>
+          <div class="topics-controls" aria-label="Переключение экспертов">
+            <button type="button" class="topics-prev" aria-label="Предыдущие эксперты" aria-controls="experts-slider"><span aria-hidden="true"></span></button>
+            <button type="button" class="topics-next" aria-label="Следующие эксперты" aria-controls="experts-slider"><span aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="experts-slider" id="experts-slider" tabindex="0" role="region" aria-label="Эксперты клубной встречи">
+<article class="expert-card"><img src="assets/img/shubina.jpg" alt="Дарья Шубина" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Дарья Шубина</h3><p>Генеральный директор, Eqiva. Главный специалист по исследованиям рынка медуслуг и индустрии здравоохранения для ведущих игроков рынка (среди клиентов – клиники «Мать и дитя», ЕМС, «Медси», «Эксперт», «Медскан» и др.).</p></div></article>
+<article class="expert-card"><img src="assets/img/egorova.jpg" alt="Тамара Егорова" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Тамара Егорова</h3><p>Операционный Директор, Клиника ЕМС (Один из лидеров рейтинга Аналитического центра Vademecum «ТОП200 частных многопрофильных клиник России»).</p></div></article>
+<article class="expert-card"><img src="assets/img/boichenko.jpg" alt="Евгений Бойченко" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Евгений Бойченко</h3><p>Сооснователь, Клиника Рассвет. Эксперт в медицинском маркетинге и коммуникациях. Преподаватель, Высшая школа организации и управления здравоохранением. Преподаватель и член экспертного совета программы EMBA, Высшая школа бизнеса МГУ.</p></div></article>
+<article class="expert-card"><div class="speaker-placeholder" role="img" aria-label="Спикер в процессе согласования"><span>Спикер в процессе согласования</span></div><div class="speaker-caption"><h3>Спикер в процессе согласования</h3><p>Секция «Кадры».</p></div></article>
+<article class="expert-card"><img src="assets/img/magerova.jpg" alt="Анна Магерова" width="260" height="260" loading="lazy"><div class="speaker-caption"><h3>Анна Магерова</h3><p>Врач-кардиолог, к.м.н. Директор по развитию, Сеть клиник Балтмед (Санкт-Петербург). Бизнес-аналитик, СмартДельтаСистемс (Москва)</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="club-program" aria-labelledby="club-program-title">
+      <div class="container">
+        <p class="label">Программа</p>
+        <h2 id="club-program-title">Программа клубной встречи</h2>
+        <div class="club-agenda">
+<div class="club-break"><time>08:00-09:00</time><p>Регистрация. приветственный кофе</p></div>
+<details class="club-session" id="club-analytics"><summary><span class="club-time">09:00–10:00</span><span class="club-session-heading"><span class="club-category">Аналитика</span><strong>ЧАСТНАЯ МЕДИЦИНА–2026: ИТОГИ И ПРОГНОЗЫ. КАК ИЗМЕНИЛСЯ ПАЦИЕНТ, РЫНОК И КОНКУРЕНЦИЯ – И ЧТО ЭТО ЗНАЧИТ ДЛЯ ВАШЕЙ КЛИНИКИ</strong></span><span class="club-toggle" aria-hidden="true"></span></summary><div class="club-session-body">
 <h3 class="session-subheading">09:00-09:45 | Экспертный блок:</h3>
 <ul class="program-topics">
 <li>Диагностика частного здравоохранения. Динамика спроса на медуслуги, ключевые вызовы и векторы развития отрасли по итогам 2026 года</li>
@@ -98,13 +134,10 @@
 <h3 class="session-subheading">09:45-10:00 | Блок ответов на вопросы</h3>
 <p class="session-paragraph">Задайте вопросы эксперту и получите развернутые ответы и рекомендации по темам, которые волнуют именно Вас!</p>
 <div class="program-speakers"><h3>В составе спикеров:</h3><div class="program-speakers-grid">
-<article class="program-person"><div class="program-portrait"><img src="assets/img/shubina.jpg" alt="Дарья Шубина" width="110" height="110" loading="lazy"></div><p class="speaker-status">Планируемый спикер</p><h4>Дарья Шубина</h4><p>Генеральный директор, Eqiva. Главный специалист по исследованиям рынка медуслуг и индустрии здравоохранения для ведущих игроков рынка (среди клиентов – клиники «Мать и дитя», ЕМС, «Медси», «Эксперт», «Медскан» и др.).</p></article>
+<article class="program-person"><div class="program-portrait"><img src="assets/img/shubina.jpg" alt="Дарья Шубина" width="110" height="110" loading="lazy"></div><h4>Дарья Шубина</h4><p>Генеральный директор, Eqiva. Главный специалист по исследованиям рынка медуслуг и индустрии здравоохранения для ведущих игроков рынка (среди клиентов – клиники «Мать и дитя», ЕМС, «Медси», «Эксперт», «Медскан» и др.).</p></article>
 </div></div></div></details>
-<details class="program-item" id="program-economics">
-      <summary><span class="program-time"><span>10:30</span><span>12:00</span></span>
-      <span class="program-marker" aria-hidden="true"></span>
-      <span class="program-heading"><span>Экономика</span><strong>ФИНАНСОВАЯ УСТОЙЧИВОСТЬ КЛИНИКИ: КАК НАЙТИ СКРЫТЫЕ ПОТЕРИ И ПОВЫСИТЬ РЕНТАБЕЛЬНОСТЬ БИЗНЕСА В 2027 ГОДУ</strong></span>
-      <span class="program-toggle" aria-hidden="true"></span></summary><div class="program-body">
+<div class="club-break"><time>10:00-10:30</time><p>Перерыв, кофе-пауза</p></div>
+<details class="club-session" id="club-economics"><summary><span class="club-time">10:30–12:00</span><span class="club-session-heading"><span class="club-category">Экономика</span><strong>ФИНАНСОВАЯ УСТОЙЧИВОСТЬ КЛИНИКИ: КАК НАЙТИ СКРЫТЫЕ ПОТЕРИ И ПОВЫСИТЬ РЕНТАБЕЛЬНОСТЬ БИЗНЕСА В 2027 ГОДУ</strong></span><span class="club-toggle" aria-hidden="true"></span></summary><div class="club-session-body">
 <h3 class="session-subheading">10:30-11:30 | Экспертный блок. Ключевые темы:</h3>
 <ul class="program-topics">
 <li>Выручка растёт, а прибыли нет: как определить реальные P&amp;L? Показатели финансового здоровья и инструменты выявления скрытых потерь бизнеса</li>
@@ -121,11 +154,8 @@
 <div class="program-speakers"><h3>В составе спикеров:</h3><div class="program-speakers-grid">
 <article class="program-person"><div class="program-portrait"><img src="assets/img/egorova.jpg" alt="Тамара Егорова" width="110" height="110" loading="lazy"></div><h4>Тамара Егорова</h4><p>Операционный Директор, Клиника ЕМС (Один из лидеров рейтинга Аналитического центра Vademecum «ТОП200 частных многопрофильных клиник России»).</p></article>
 </div></div></div></details>
-<details class="program-item" id="program-marketing">
-      <summary><span class="program-time"><span>12:30</span><span>14:00</span></span>
-      <span class="program-marker" aria-hidden="true"></span>
-      <span class="program-heading"><span>Маркетинг</span><strong>СТРАТЕГИИ УПРАВЛЕНИЯ ПАЦИЕНТОПОТОКОМ: СЕГМЕНТАЦИЯ ПАЦИЕНТСКОЙ БАЗЫ, ПЕРЕСТРОЙКА КАНАЛОВ КОММУНИКАЦИИ И УПРАВЛЕНИЕ НЕЙРОВЫДАЧЕЙ</strong></span>
-      <span class="program-toggle" aria-hidden="true"></span></summary><div class="program-body">
+<div class="club-break"><time>12:00-12:30</time><p>Перерыв, кофе-пауза</p></div>
+<details class="club-session" id="club-marketing"><summary><span class="club-time">12:30–14:00</span><span class="club-session-heading"><span class="club-category">Маркетинг</span><strong>СТРАТЕГИИ УПРАВЛЕНИЯ ПАЦИЕНТОПОТОКОМ: СЕГМЕНТАЦИЯ ПАЦИЕНТСКОЙ БАЗЫ, ПЕРЕСТРОЙКА КАНАЛОВ КОММУНИКАЦИИ И УПРАВЛЕНИЕ НЕЙРОВЫДАЧЕЙ</strong></span><span class="club-toggle" aria-hidden="true"></span></summary><div class="club-session-body">
 <h3 class="session-subheading">12:30-13:30 | Экспертный блок:</h3>
 <ul class="program-topics">
 <li>От обращения до приёма: где клиника теряет пациентов? Как повысить конверсию в запись, сократить потери заявок и увеличить загрузку врачей?</li>
@@ -142,11 +172,8 @@
 <div class="program-speakers"><h3>В составе спикеров:</h3><div class="program-speakers-grid">
 <article class="program-person"><div class="program-portrait"><img src="assets/img/boichenko.jpg" alt="Евгений Бойченко" width="110" height="110" loading="lazy"></div><h4>Евгений Бойченко</h4><p>Сооснователь, Клиника Рассвет. Эксперт в медицинском маркетинге и коммуникациях. Преподаватель, Высшая школа организации и управления здравоохранением. Преподаватель и член экспертного совета программы EMBA, Высшая школа бизнеса МГУ.</p></article>
 </div></div></div></details>
-<details class="program-item" id="program-team">
-      <summary><span class="program-time"><span>15:00</span><span>16:30</span></span>
-      <span class="program-marker" aria-hidden="true"></span>
-      <span class="program-heading"><span>Кадры</span><strong>ВРАЧИ И ПРИБЫЛЬ: ЭФФЕКТИВНЫЕ ПОДХОДЫ К УПРАВЛЕНИЮ ПРОИЗВОДИТЕЛЬНОСТЬЮ МЕДИЦИНСКОЙ КОМАНДЫ</strong></span>
-      <span class="program-toggle" aria-hidden="true"></span></summary><div class="program-body">
+<div class="club-break"><time>14:00-15:00</time><p>Обед</p></div>
+<details class="club-session" id="club-team"><summary><span class="club-time">15:00–16:30</span><span class="club-session-heading"><span class="club-category">Кадры</span><strong>ВРАЧИ И ПРИБЫЛЬ: ЭФФЕКТИВНЫЕ ПОДХОДЫ К УПРАВЛЕНИЮ ПРОИЗВОДИТЕЛЬНОСТЬЮ МЕДИЦИНСКОЙ КОМАНДЫ</strong></span><span class="club-toggle" aria-hidden="true"></span></summary><div class="club-session-body">
 <h3 class="session-subheading">15:00-16:00 | Экспертный блок:</h3>
 <ul class="program-topics">
 <li>Врачи на вес золота: как меняется кадровый рынок частной медицины? Где искать специалистов и чем конкурировать за них с крупными сетями?</li>
@@ -163,11 +190,8 @@
 <div class="program-speakers"><h3>В составе спикеров:</h3><div class="program-speakers-grid">
 <article class="program-person"><div class="program-portrait"><div class="speaker-placeholder" role="img" aria-label="Спикер в процессе согласования"><span>Спикер в процессе согласования</span></div></div><h4>Спикер в процессе согласования</h4><p>Секция «Кадры».</p></article>
 </div></div></div></details>
-<details class="program-item" id="program-management">
-      <summary><span class="program-time"><span>17:00</span><span>18:30</span></span>
-      <span class="program-marker" aria-hidden="true"></span>
-      <span class="program-heading"><span>Стратегия управления</span><strong>УПРАВЛЕНЧЕСКАЯ СИСТЕМА КЛИНИКИ: КАКИЕ РЕШЕНИЯ ОБЕСПЕЧАТ ВЫСОКУЮ ПРИБЫЛЬ И КАЧЕСТВО МЕДИЦИНСКОЙ ПОМОЩИ В 2027 ГОДУ?</strong></span>
-      <span class="program-toggle" aria-hidden="true"></span></summary><div class="program-body">
+<div class="club-break"><time>16:30-17:00</time><p>Перерыв, кофе-пауза</p></div>
+<details class="club-session" id="club-management"><summary><span class="club-time">17:00–18:30</span><span class="club-session-heading"><span class="club-category">Стратегия управления</span><strong>УПРАВЛЕНЧЕСКАЯ СИСТЕМА КЛИНИКИ: КАКИЕ РЕШЕНИЯ ОБЕСПЕЧАТ ВЫСОКУЮ ПРИБЫЛЬ И КАЧЕСТВО МЕДИЦИНСКОЙ ПОМОЩИ В 2027 ГОДУ?</strong></span><span class="club-toggle" aria-hidden="true"></span></summary><div class="club-session-body">
 <h3 class="session-subheading">17:00-18:00 | Экспертный блок:</h3>
 <ul class="program-topics">
 <li>Клиника-2027: пора менять бизнес-модель? Как адаптировать стратегию к новым условиям рынка и обеспечить устойчивый рост бизнеса?</li>
@@ -184,12 +208,84 @@
 <div class="program-speakers"><h3>В составе спикеров:</h3><div class="program-speakers-grid">
 <article class="program-person"><div class="program-portrait"><img src="assets/img/magerova.jpg" alt="Анна Магерова" width="110" height="110" loading="lazy"></div><h4>Анна Магерова</h4><p>Врач-кардиолог, к.м.н. Директор по развитию, Сеть клиник Балтмед (Санкт-Петербург). Бизнес-аналитик, СмартДельтаСистемс (Москва)</p></article>
 </div></div></div></details>
-</div><p class="program-disclaimer">*Программа находится в разработке. Состав тем и спикеров может меняться.</p></section>
-    <div class="program-download content">
-      <a class="program-download-button" href="doc/Рабочая_программа_Клуб_директоров_Частных_клиник_Экономика_частной (2).pdf" download>Скачать полную программу</a>
-      <a class="program-download-button" href="doc/Краткая_программа_Клуб_директоров_Частных_клиник_Экономика_частной (2).pdf" download>Скачать короткую программу</a>
+<div class="club-break club-finale"><time>18:30-19:00</time><p>| Фуршет. Свободное общение участников и спикеров</p></div>
+</div><p class="club-disclaimer">*Программа находится в разработке. Состав тем и спикеров может меняться</p>
+<div class="club-downloads">
+      <a class="button" href="doc/Рабочая_программа_Клуб_директоров_Частных_клиник_Экономика_частной (2).pdf" download>Скачать полную программу</a>
+      <a class="button" href="doc/Краткая_программа_Клуб_директоров_Частных_клиник_Экономика_частной (2).pdf" download>Скачать короткую программу</a>
     </div>
-    <section class="packages" aria-labelledby="packages-title" hidden>
+</div></section>
+    <section class="motivation motivation-registration container" aria-labelledby="participation-title">
+      <div class="motivation-content">
+        <h2 id="participation-title">Станьте частью ключевого события сферы частной медицины в России!</h2>
+        <p>Оставьте заявку, чтобы получить условия участия в клубной встрече.</p>
+        <button class="button motivation-button" type="button" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog">Стать участником</button>
+      </div>
+    </section>
+    <section class="history" aria-labelledby="history-title">
+      <div class="container">
+        <p class="label">Как это было</p>
+        <div class="topics-header">
+          <h2 id="history-title">Итоги и фотоотчёты прошедших встреч</h2>
+          <div class="topics-controls" aria-label="Переключение мероприятий">
+            <button type="button" class="topics-prev" aria-label="Предыдущие мероприятия" aria-controls="history-slider"><span aria-hidden="true"></span></button>
+            <button type="button" class="topics-next" aria-label="Следующие мероприятия" aria-controls="history-slider"><span aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="history-slider" id="history-slider" tabindex="0" role="region" aria-label="Прошедшие мероприятия">
+<article class="history-card">
+          <div class="history-slideshow" data-history="june-2026">
+            <img src="old/15_1.jpg" alt="15-й Всероссийский конгресс в Москве, июнь 2026 года" width="460" height="240" loading="lazy">
+          </div>
+          <p>15-й Всероссийский конгресс «Управление частной клиникой в России»<br><time datetime="2026-06-26">26 июня 2026</time>, Москва</p>
+          <a class="history-read" href="https://blog.imperiaforum.ru/clinic_june_2026" target="_blank" rel="noopener noreferrer">ЧИТАТЬ</a>
+        </article>
+<article class="history-card">
+          <div class="history-slideshow" data-history="june-2024">
+            <img src="old/14-1.jpg" alt="Форум в Москве, декабрь 2025 года" width="460" height="240" loading="lazy">
+          </div>
+          <p>Форум «Управление частной клиникой в России 2025»<br><time datetime="2025-12-11">11 декабря 2025</time>, Москва</p>
+          <a class="history-read" href="https://simposium-forum.com/clinic_dec_2025" target="_blank" rel="noopener noreferrer">ЧИТАТЬ</a>
+        </article>
+<article class="history-card">
+          <div class="history-slideshow" data-history="december-2024">
+            <img src="old/13_1.jpeg" alt="Конгресс в Москве, июнь 2025 года" width="460" height="240" loading="lazy">
+          </div>
+          <p>Конгресс «Управление частной клиникой в России»<br><time datetime="2025-06-11">11 июня 2025</time>, Москва</p>
+          <a class="history-read" href="https://simposium-forum.com/clinic2025summer" target="_blank" rel="noopener noreferrer">ЧИТАТЬ</a>
+        </article>
+<article class="history-card">
+          <div class="history-slideshow" data-history="june-2025">
+            <img src="old/12_1.png" alt="Конгресс в Москве, декабрь 2024 года" width="460" height="240" loading="lazy">
+          </div>
+          <p>Конгресс «Управление частной клиникой в России»<br><time datetime="2024-12-04">4 декабря 2024</time>, Москва</p>
+          <a class="history-read" href="https://simposium-forum.com/clinic_2024_dec" target="_blank" rel="noopener noreferrer">ЧИТАТЬ</a>
+        </article>
+        <article class="history-card">
+          <div class="history-slideshow" data-history="december-2025">
+            <img src="old/11_1.jpg" alt="Конгресс в Санкт-Петербурге, июнь 2024 года" width="460" height="240" loading="lazy">
+          </div>
+          <p>Конгресс «Управление частной клиникой в России»<br><time datetime="2024-06-13">13 июня 2024</time>, Санкт-Петербург</p>
+          <a class="history-read" href="https://simposium-forum.com/clinic_2024_june" target="_blank" rel="noopener noreferrer">ЧИТАТЬ</a>
+        </article>
+</div></div></section>
+    <section class="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <p class="label">Отзывы</p>
+        <div class="topics-header">
+          <h2 id="reviews-title">Впечатления участников и спикеров</h2>
+          <div class="topics-controls" aria-label="Переключение отзывов">
+            <button type="button" class="topics-prev" aria-label="Предыдущие отзывы" aria-controls="reviews-slider"><span aria-hidden="true"></span></button>
+            <button type="button" class="topics-next" aria-label="Следующие отзывы" aria-controls="reviews-slider"><span aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <div class="reviews-slider" id="reviews-slider" tabindex="0" role="region" aria-label="Отзывы участников">
+<article class="review-card"><div class="review-head"><img src="assets/redesign/review-0.png" alt="Юлия Гладкая" width="70" height="70" loading="lazy"><div><h3>Юлия Гладкая</h3><p>Основатель, Высшая школа врачей и клиник</p></div></div><blockquote>Всегда получаю невероятную радость и пользу, участвуя в данном мероприятии. Все кто здесь собирается — очень прокаченные, опытные специалисты, задают глубокие вопросы. Я не только делюсь своим опытом с этой аудиторией как спикер, но еще и многому учусь сама</blockquote></article>
+<article class="review-card"><div class="review-head"><img src="assets/redesign/review-1.png" alt="Юлина Борейша" width="70" height="70" loading="lazy"><div><h3>Юлина Борейша</h3><p>Врач-невролог</p></div></div><blockquote>Потрясающие спикеры - активные, эмоционально вовлеченные, заряжающие позитивом ПРАКТИКИ! Никакой ненужной минуты &quot;научки&quot; - все только по делу во имя и для развития клиник, стационаров, амбулаторий. Я получила колоссальное удовольствие от общения с людьми, искренне любящими свой медицинский бизнес, близкими мне по духу и по восприятию мира</blockquote></article>
+<article class="review-card"><div class="review-head"><img src="assets/redesign/review-2.png" alt="Светлана Кугай" width="70" height="70" loading="lazy"><div><h3>Светлана Кугай</h3><p>Финансист, бизнес-консультант</p></div></div><blockquote>Особо понравилось то, что на мерпориятии затрагивается весь цикл вопросов, связанных с клиникой — и как работать с пациентами, и как мотивировать врачей, и какие показатели отслеживать. С удовольствием поучаствовала, очень много инсайтов получила.</blockquote></article>
+<article class="review-card"><div class="review-head"><img src="assets/redesign/review-3.png" alt="Марина Колесник" width="70" height="70" loading="lazy"><div><h3>Марина Колесник</h3><p>Управляющая клиники «Зрение Нева»</p></div></div><blockquote>Очень много важной полезной информации. Спикеры старались дать максимум знаний за свое выступление. Каждый семинар сегодня был очень полезным</blockquote></article>
+</div></div></section>
+<section class="packages" aria-labelledby="packages-title" hidden>
       <div class="content">
         <h2 id="packages-title">ПАКЕТЫ УЧАСТИЯ</h2>
       </div>
@@ -256,14 +352,27 @@
         </div>
       </div>
     </section>
-    <section class="registration" id="registration" aria-labelledby="registration-title">
-      <div class="registration-frame">
-        <svg class="registration-border" viewBox="0 0 800 590" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M6 6 H714 V144 H786 V452 H714 V584 H6 Z" fill="none" stroke="#05d8b0" stroke-width="11" stroke-linejoin="round"/>
-        </svg>
-        <div class="registration-content">
-          <h2 id="registration-title">СТАНЬТЕ УЧАСТНИКОМ</h2>
-          <form class="registration-form" id="registration-form" method="post">
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p class="footer-title">ЭКОНОМИКА ЧАСТНОЙ<br>КЛИНИКИ-2027</p>
+      <address>Конгрессная компания «Империя А»<br>
+        <a href="tel:+79666663691">+7 (966) 666-36-91</a><br>
+        <a href="mailto:info@simposium-forum.ru">info@simposium-forum.ru</a><br>
+        <a href="https://drive.google.com/file/d/1X54CUgCl5jokNqOCHPwx12taTsmJLTAE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>
+      </address>
+      <div class="footer-actions">
+        <button class="button" type="button" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog">Зарегистрироваться</button>
+        <a class="button" href="#event-title"><span aria-hidden="true">↑</span> Наверх</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="registration-dialog" id="registration-dialog" aria-labelledby="registration-dialog-title">
+    <button class="dialog-close" type="button" aria-label="Закрыть форму регистрации">×</button>
+    <h2 id="registration-dialog-title">Присоединяйтесь к клубной встрече профессионалов частной медицины!</h2>
+    <p class="registration-intro">Оставьте заявку — менеджер свяжется с вами в ближайшее время для подтверждения регистрации</p>
+<form class="registration-form" id="registration-form" method="post">
             <div class="registration-field">
               <label class="visually-hidden" for="registration-name">Имя и фамилия</label>
               <input id="registration-name" name="name" type="text" autocomplete="name" maxlength="150" placeholder="Имя и фамилия" required>
@@ -298,98 +407,10 @@
             <p class="registration-status" id="registration-status" role="status" aria-live="polite"></p>
             <noscript><p>Для работы формы включите JavaScript.</p></noscript>
           </form>
-        </div>
-      </div>
-    </section>
-    <section class="history content" aria-labelledby="history-title">
-      <h2 id="history-title">КАК ЭТО БЫЛО</h2>
-      <div class="history-grid">
-        <article class="history-card">
-          <div class="history-slideshow" data-history="june-2026">
-            <img src="old/15_1.jpg" alt="15-й Всероссийский конгресс в Москве, июнь 2026 года" width="460" height="240" loading="lazy">
-          </div>
-          <p>15-й Всероссийский конгресс «Управление частной клиникой в России»<br><time datetime="2026-06-26">26 июня 2026</time>, Москва</p>
-          <a class="history-read" href="https://blog.imperiaforum.ru/clinic_june_2026" target="_blank" rel="noopener noreferrer">ЧИТАТЬ</a>
-        </article>
-        <article class="history-card">
-          <div class="history-slideshow" data-history="june-2024">
-            <img src="old/14-1.jpg" alt="Форум в Москве, декабрь 2025 года" width="460" height="240" loading="lazy">
-          </div>
-          <p>Форум «Управление частной клиникой в России 2025»<br><time datetime="2025-12-11">11 декабря 2025</time>, Москва</p>
-          <button class="history-read" type="button" disabled>ЧИТАТЬ</button>
-        </article>
-        <article class="history-card">
-          <div class="history-slideshow" data-history="december-2024">
-            <img src="old/13_1.jpeg" alt="Конгресс в Москве, июнь 2025 года" width="460" height="240" loading="lazy">
-          </div>
-          <p>Конгресс «Управление частной клиникой в России»<br><time datetime="2025-06-11">11 июня 2025</time>, Москва</p>
-          <button class="history-read" type="button" disabled>ЧИТАТЬ</button>
-        </article>
-        <article class="history-card">
-          <div class="history-slideshow" data-history="june-2025">
-            <img src="old/12_1.png" alt="Конгресс в Москве, декабрь 2024 года" width="460" height="240" loading="lazy">
-          </div>
-          <p>Конгресс «Управление частной клиникой в России»<br><time datetime="2024-12-04">4 декабря 2024</time>, Москва</p>
-          <button class="history-read" type="button" disabled>ЧИТАТЬ</button>
-        </article>
-      </div>
-    </section>
-    <section class="reviews content" aria-labelledby="reviews-title">
-      <h2 id="reviews-title">ОТЗЫВЫ</h2>
-      <div class="reviews-list">
-        <figure class="review">
-          <div class="review-player">
-            <iframe src="https://vkvideo.ru/video_ext.php?oid=-8465638&amp;id=456239040&amp;hd=2&amp;autoplay=0"
-              title="Видеоотзыв Юлии Гладкой" loading="lazy"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            <figcaption class="review-caption">Юлия Гладкая: основатель «Высшая школа врачей и клиник»</figcaption>
-          </div>
-          <a class="review-source" href="https://vkvideo.ru/video-8465638_456239040" target="_blank" rel="noopener noreferrer">Открыть отзыв Юлии Гладкой в VK Видео ↗</a>
-        </figure>
-        <figure class="review">
-          <div class="review-player">
-            <iframe src="https://vkvideo.ru/video_ext.php?oid=-8465638&amp;id=456239039&amp;hd=2&amp;autoplay=0"
-              title="Видеоотзыв Светланы Кугай" loading="lazy"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            <figcaption class="review-caption">Светлана Кугай, делегат 12-го конгресса</figcaption>
-          </div>
-          <a class="review-source" href="https://vkvideo.ru/video-8465638_456239039" target="_blank" rel="noopener noreferrer">Открыть отзыв Светланы Кугай в VK Видео ↗</a>
-        </figure>
-        <figure class="review">
-          <div class="review-player">
-            <iframe src="https://vkvideo.ru/video_ext.php?oid=-8465638&amp;id=456239038&amp;hd=2&amp;autoplay=0"
-              title="Видеоотзыв Марии Колесник" loading="lazy"
-              allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            <figcaption class="review-caption">Мария Колесник, управляющий партнер клиники «Зрение Нева»</figcaption>
-          </div>
-          <a class="review-source" href="https://vkvideo.ru/video-8465638_456239038" target="_blank" rel="noopener noreferrer">Открыть отзыв Марии Колесник в VK Видео ↗</a>
-        </figure>
-      </div>
-    </section>
-    <section class="partners content" aria-labelledby="partners-title">
-      <h2 id="partners-title">ИНФОРМАЦИОННЫЕ ПАРТНЁРЫ</h2>
-      <div class="partners-grid">
-        <img class="partner-skolkovo" src="assets/partners/skolkovo.png" alt="Сколково — Московская школа управления" width="363" height="113" loading="lazy">
-        <img class="partner-clinics" src="assets/partners/strong-clinics.png" alt="Сильные клиники.РФ — люди, события, знания" width="352" height="143" loading="lazy">
-        <img class="partner-bmed" src="assets/partners/bmed.png" alt="Б | МЕД" width="366" height="83" loading="lazy">
-        <img class="partner-medical" src="assets/partners/medical-partner.png" alt="Информационный партнёр — эмблема со змеёй в треугольнике" width="216" height="186" loading="lazy">
-      </div>
-    </section>
-    <footer class="contacts content" id="contacts" aria-labelledby="contacts-title">
-      <h2 id="contacts-title">КОНТАКТЫ</h2>
-      <div class="contacts-details">
-        <a class="contacts-brand" href="https://blog.imperiaforum.ru/" target="_blank" rel="noopener noreferrer" aria-label="Блог компании «Империя А»">
-          <img class="contacts-logo" src="assets/img/logo_imperia.png" alt="Империя Форум — КВК «Империя А»" width="2615" height="955" loading="lazy">
-        </a>
-        <address>
-          КВК «Империя А»<br>
-          Санкт-Петербург, Магнитогорская, 23к.1<br>
-          Тел.: <a href="tel:+78123274918">+7 (812) 327-49-18</a>
-        </address>
-        <a class="contacts-policy" href="https://drive.google.com/file/d/1X54CUgCl5jokNqOCHPwx12taTsmJLTAE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>
-      </div>
-    </footer>
-  </main>
+  </dialog>
+
   <script src="script.js"></script>
+
+
 </body>
 </html>
