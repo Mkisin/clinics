@@ -9,7 +9,13 @@
     location = /clinic-forum { return 308 /clinic-forum/$is_args$args; }
     location ^~ /clinic-forum/ { proxy_pass http://127.0.0.1:3011/; ... }
   Относительные пути ресурсов и API работают в обоих вариантах.
-  После смены DNS на 200.165.228.35 необходимо выпустить HTTPS-сертификат.
+  С 22.10.2026 HTTPS включён для clinic-forum.ru и www.clinic-forum.ru.
+  HTTP перенаправляется на HTTPS. Сертификат Let's Encrypt:
+  /etc/letsencrypt/live/clinic-forum.ru/ (первый срок: до 20.01.2027).
+  Автопродление: certbot.timer; после продления nginx перечитывает сертификат
+  через /etc/letsencrypt/renewal-hooks/deploy/clinic-nginx-reload.sh.
+  Конфигурация: /etc/nginx/sites-available/clinic-forum.ru, порт приложения 3011.
+  medregschool.ru сохраняет отдельную конфигурацию и маршрут /october26/.
 
 1. Запускать сайт через Node.js (npm start). Сервер слушает 127.0.0.1:3010.
    Не публиковать корневую папку проекта как каталог статических файлов.
@@ -38,7 +44,7 @@
    Для нескольких процессов требуется общее хранилище ограничений.
 
 Локальные проверки:
-  python -X utf8 scripts/audit_program.py
+  python -X utf8 scripts/audit_redesign_program.py --root
   npm test
 
 Тесты используют подменённый ответ CRM и не создают реальные лиды.

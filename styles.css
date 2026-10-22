@@ -163,7 +163,6 @@ body.dialog-open { overflow: hidden; }
 .visually-hidden, .registration-trap { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .registration-dialog :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 @media (min-width: 1001px) {
-  .topics .topics-controls { display: none; }
   .experts .topics-controls { display: none; }
   .experts-slider { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: visible; padding-bottom: 0; }
 }
