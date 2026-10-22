@@ -20,6 +20,22 @@ document.querySelectorAll('.topics-slider, .experts-slider, .reviews-slider').fo
   const previous = section.querySelector('.topics-prev');
   const next = section.querySelector('.topics-next');
   const cards = [...topicsSlider.children];
+  if (topicsSlider.matches('.topics-slider, .experts-slider')) {
+    const updateControls = () => {
+      previous.disabled = topicsSlider.scrollLeft <= 1;
+      next.disabled = topicsSlider.scrollLeft >= topicsSlider.scrollWidth - topicsSlider.clientWidth - 1;
+    };
+    const move = direction => topicsSlider.scrollBy({
+      left: direction * (cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(topicsSlider).gap)),
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+    });
+    previous.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    topicsSlider.addEventListener('scroll', updateControls, { passive: true });
+    new ResizeObserver(updateControls).observe(topicsSlider);
+    updateControls();
+    return;
+  }
   const copyCards = () => cards.map(card => {
     const copy = card.cloneNode(true);
     copy.setAttribute('aria-hidden', 'true');

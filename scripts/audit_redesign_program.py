@@ -35,8 +35,8 @@ for key, start, end, label in slots:
     section = paragraphs[pos + 1:]
     title_end = next(i for i, p in enumerate(section) if '|' in p)
     speaker_start = next(i for i, p in enumerate(section) if p in ['Спикер:', 'Планируемый спикер:'])
-    block = re.search(r'<details class="club-session" id="club-' + key + r'">.*?</details>', agenda, re.S).group(0)
-    assert plain(re.search(r'<strong>(.*?)</strong>', block, re.S)[1]) == norm(' '.join(section[:title_end])), key
+    block = re.search(r'<(?:details|article) class="club-session" id="club-' + key + r'">.*?(?=<div class="club-break)', agenda, re.S).group(0)
+    assert plain(re.search(r'(?:<h3 class="club-session-title">|<strong>)(.*?)(?:</h3>|</strong>)', block, re.S)[1]) .casefold() == norm(' '.join(section[:title_end])).casefold(), key
     assert plain(re.search(r'<span class="club-time">(.*?)</span>', block, re.S)[1]) == start + '–' + end, key
     body = block.split('<div class="club-session-body">', 1)[1].split('<div class="program-speakers">', 1)[0]
     actual = [plain(m[1]) for m in re.findall(r'<(h3|li|p)\b[^>]*>(.*?)</\1>', body, re.S)]
@@ -52,7 +52,7 @@ for key, start, end, label in slots:
 breaks = [p for p in paragraphs if re.match(r'^\d{2}:\d{2}', p) and any(w in p for w in ['Регистрация', 'Перерыв', 'Обед', 'Фуршет'])]
 for p in breaks:
     assert norm(p) in plain(agenda), p
-assert len(re.findall(r'<details class="club-session"', agenda)) == 5
+assert len(re.findall(r'<(?:details|article) class="club-session"', agenda)) == 5
 assert 'Фомин' not in agenda and 'Сизенцева' not in agenda
 assert 'Планируемый спикер' not in agenda
 assert plain(agenda).index('08:00') < plain(agenda).index('09:00')
