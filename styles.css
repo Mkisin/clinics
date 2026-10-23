@@ -120,7 +120,8 @@ a.history-read:hover { background: var(--green); }
 .club-session-body .program-topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; padding: 0; margin: 0; list-style: none; }
 .club-session-body li { position: relative; padding-left: 18px; }
 .club-session-body li::before { content: '\25B9'; position: absolute; left: 0; color: var(--green); }
-.club-session-body li strong { color: #006d60; font-weight: 700; }
+.club-session-body li strong,
+.club-session-body .session-paragraph strong { color: #006d60; font-weight: 700; }
 .club-session-body .session-paragraph { margin-block: 16px 0; }
 .session-qa { border-radius: 0 0 20px 20px; background: #f5fbfa; }
 .session-qa .program-topics { gap: 20px 48px; }
