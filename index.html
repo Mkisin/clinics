@@ -24,7 +24,7 @@
         </div>
         <div class="hero-invitation">
           <p>Стратегии роста прибыли<br>для устойчивого развития бизнеса</p>
-          <a class="button" href="#registration-dialog" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog"><span aria-hidden="true">→</span> Стать участником</a>
+          <a class="button participant-button" href="#registration"><span aria-hidden="true">→</span> Стать участником</a>
         </div>
         </div>
       </div>
@@ -91,7 +91,7 @@
       <div class="motivation-content">
         <h2 id="motivation-title"><span>Прибыль теряется.</span> <span>Пациенты уходят.</span> <span>Расходы растут</span></h2>
         <p>Разбор управленческих задач вашей клиники: задайте вопросы эксперту, обсудите свою ситуацию и получите практические рекомендации для принятия взвешенных решений.</p>
-        <button class="button motivation-button" type="button" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog">Стать участником</button>
+        <a class="button motivation-button participant-button" href="#registration">Стать участником</a>
       </div>
     </section>
     <section class="experts" aria-labelledby="experts-title">
@@ -267,11 +267,48 @@
       <a class="button" href="https://drive.google.com/file/d/1WUQM_nFmLuZfbmRWI2hBp6SZWcaABjeD/view?usp=sharing" target="_blank" rel="noopener noreferrer">Скачать короткую программу</a>
     </div>
 </div></section>
-    <section class="motivation motivation-registration container" aria-labelledby="participation-title">
-      <div class="motivation-content">
-        <h2 id="participation-title">Станьте частью ключевого события сферы частной медицины в России!</h2>
-        <p>Оставьте заявку, чтобы получить условия участия в клубной встрече.</p>
-        <button class="button motivation-button" type="button" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog">Стать участником</button>
+    <section class="registration-section" id="registration" aria-labelledby="participation-title">
+      <div class="container registration-layout">
+        <div class="registration-copy">
+          <p class="label">Регистрация</p>
+          <h2 id="participation-title">Станьте частью ключевого события сферы частной медицины в России!</h2>
+          <p class="registration-intro">Оставьте заявку — менеджер свяжется с вами в ближайшее время и расскажет об условиях участия в клубной встрече.</p>
+        </div>
+        <form class="registration-form" id="registration-form" method="post">
+          <div class="registration-field">
+            <label class="visually-hidden" for="registration-name">Имя и фамилия</label>
+            <input id="registration-name" name="name" type="text" autocomplete="name" maxlength="150" placeholder="Имя и фамилия" required>
+          </div>
+          <div class="registration-field">
+            <label class="visually-hidden" for="registration-email">E-mail</label>
+            <input id="registration-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="E-mail" required>
+          </div>
+          <div class="registration-field">
+            <label class="visually-hidden" for="registration-phone">Телефон</label>
+            <input id="registration-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Телефон" required>
+          </div>
+          <div class="registration-field">
+            <label class="visually-hidden" for="registration-organization">Название вашего медучреждения</label>
+            <input id="registration-organization" name="organization" type="text" autocomplete="organization" minlength="2" maxlength="200" placeholder="Название вашего медучреждения" required>
+          </div>
+          <div class="registration-field">
+            <label class="visually-hidden" for="registration-promo">Промокод на скидку (если есть)</label>
+            <input id="registration-promo" name="promo" type="text" maxlength="80" placeholder="Промокод на скидку (если есть)">
+          </div>
+          <!-- Поле-ловушка: обработчик на сервере должен отклонять заполненное значение. -->
+          <div class="registration-trap" aria-hidden="true" inert>
+            <label for="registration-website">Ваш сайт — оставьте поле пустым</label>
+            <input id="registration-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <label class="registration-consent">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>Я даю согласие на обработку своих персональных данных в соответствии с <a class="registration-policy" href="https://drive.google.com/file/d/1X54CUgCl5jokNqOCHPwx12taTsmJLTAE/view?usp=sharing" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a></span>
+          </label>
+          <!-- Кнопка включается после подключения обработчика JavaScript. -->
+          <button class="registration-submit" type="submit" disabled>ПОДАТЬ ЗАЯВКУ</button>
+          <p class="registration-status" id="registration-status" role="status" aria-live="polite"></p>
+          <noscript><p>Для работы формы включите JavaScript.</p></noscript>
+        </form>
       </div>
     </section>
     <section class="history" aria-labelledby="history-title">
@@ -414,52 +451,11 @@
         <a href="https://drive.google.com/file/d/1X54CUgCl5jokNqOCHPwx12taTsmJLTAE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>
       </address>
       <div class="footer-actions">
-        <button class="button" type="button" data-open-registration aria-haspopup="dialog" aria-controls="registration-dialog">Зарегистрироваться</button>
+        <a class="button" href="#registration">Зарегистрироваться</a>
         <a class="button" href="#event-title"><span aria-hidden="true">↑</span> Наверх</a>
       </div>
     </div>
   </footer>
-
-  <dialog class="registration-dialog" id="registration-dialog" aria-labelledby="registration-dialog-title">
-    <button class="dialog-close" type="button" aria-label="Закрыть форму регистрации">×</button>
-    <h2 id="registration-dialog-title">Присоединяйтесь к клубной встрече профессионалов частной медицины!</h2>
-    <p class="registration-intro">Оставьте заявку — менеджер свяжется с вами в ближайшее время для подтверждения регистрации</p>
-<form class="registration-form" id="registration-form" method="post">
-            <div class="registration-field">
-              <label class="visually-hidden" for="registration-name">Имя и фамилия</label>
-              <input id="registration-name" name="name" type="text" autocomplete="name" maxlength="150" placeholder="Имя и фамилия" required>
-            </div>
-            <div class="registration-field">
-              <label class="visually-hidden" for="registration-email">E-mail</label>
-              <input id="registration-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="E-mail" required>
-            </div>
-            <div class="registration-field">
-              <label class="visually-hidden" for="registration-phone">Телефон</label>
-              <input id="registration-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Телефон" required>
-            </div>
-            <div class="registration-field">
-              <label class="visually-hidden" for="registration-organization">Название вашего медучреждения</label>
-              <input id="registration-organization" name="organization" type="text" autocomplete="organization" minlength="2" maxlength="200" placeholder="Название вашего медучреждения" required>
-            </div>
-            <div class="registration-field">
-              <label class="visually-hidden" for="registration-promo">Промокод на скидку (если есть)</label>
-              <input id="registration-promo" name="promo" type="text" maxlength="80" placeholder="Промокод на скидку (если есть)">
-            </div>
-            <!-- Поле-ловушка: обработчик на сервере должен отклонять заполненное значение. -->
-            <div class="registration-trap" aria-hidden="true" inert>
-              <label for="registration-website">Ваш сайт — оставьте поле пустым</label>
-              <input id="registration-website" name="website" type="text" tabindex="-1" autocomplete="off">
-            </div>
-            <label class="registration-consent">
-              <input type="checkbox" name="consent" value="yes" required>
-              <span>Я даю согласие на обработку своих персональных данных в соответствии с <a class="registration-policy" href="https://drive.google.com/file/d/1X54CUgCl5jokNqOCHPwx12taTsmJLTAE/view?usp=sharing" target="_blank" rel="noopener noreferrer">политикой обработки персональных данных</a></span>
-            </label>
-            <!-- Кнопка включается после подключения обработчика JavaScript. -->
-            <button class="registration-submit" type="submit" disabled>ПОДАТЬ ЗАЯВКУ</button>
-            <p class="registration-status" id="registration-status" role="status" aria-live="polite"></p>
-            <noscript><p>Для работы формы включите JavaScript.</p></noscript>
-          </form>
-  </dialog>
 
   <script src="script.js"></script>
 

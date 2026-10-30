@@ -1,20 +1,3 @@
-const registrationDialog = document.getElementById('registration-dialog');
-if (registrationDialog) {
-  document.querySelectorAll('[data-open-registration]').forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      registrationDialog.showModal();
-      document.body.classList.add('dialog-open');
-    });
-  });
-  registrationDialog.querySelector('.dialog-close').addEventListener('click', () => registrationDialog.close());
-  registrationDialog.addEventListener('click', event => {
-    const bounds = registrationDialog.getBoundingClientRect();
-    if (event.target === registrationDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) registrationDialog.close();
-  });
-  registrationDialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
-}
-
 document.querySelectorAll('.topics-slider, .experts-slider, .reviews-slider').forEach(topicsSlider => {
   const section = topicsSlider.closest('section');
   const previous = section.querySelector('.topics-prev');
