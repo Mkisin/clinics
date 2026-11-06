@@ -1,6 +1,12 @@
 const EVENT_TITLE = 'Встреча клуба директоров частных клиник «Экономика частной клиники-2027», 8 декабря 2026, Москва';
+const { randomUUID } = require('node:crypto');
 const { createSpamGuard } = require('./spam-guard');
 const trim = (value) => typeof value === 'string' ? value.trim() : '';
+
+function logEvent(logger, level, event) {
+  const write = logger && typeof logger[level] === 'function' ? logger[level].bind(logger) : null;
+  if (write) write(JSON.stringify(event));
+}
 
 function normalizePhone(value) {
   const digits = trim(value).replace(/\D/g, '');
@@ -10,7 +16,7 @@ function normalizePhone(value) {
 }
 
 // fetch и настройки можно подменить в тестах без обращений в реальный Битрикс.
-function createRegister({ request = (...args) => fetch(...args), env = process.env, guard = createSpamGuard() } = {}) {
+function createRegister({ request = (...args) => fetch(...args), env = process.env, guard = createSpamGuard(), logger = console } = {}) {
   return async function register(req, res) {
     res.setHeader('Cache-Control', 'no-store');
     if (req.method !== 'POST') return res.status(405).json({ ok: false, message: 'Метод не поддерживается.' });
@@ -53,6 +59,12 @@ function createRegister({ request = (...args) => fetch(...args), env = process.e
     }
     const reservation = guard.reserve(email, phone);
     if (!reservation) return res.status(409).json({ ok: false, message: 'Заявка с этими контактами уже отправлена или обрабатывается. Пожалуйста, дождитесь ответа менеджера.' });
+    const requestId = randomUUID();
+    const startedAt = Date.now();
+    const configuredTimeout = Number(env.BITRIX_TIMEOUT_MS || 30000);
+    const timeoutMs = Number.isSafeInteger(configuredTimeout) && configuredTimeout >= 5000 && configuredTimeout <= 60000 ? configuredTimeout : 30000;
+    res.setHeader('X-Request-ID', requestId);
+    logEvent(logger, 'info', { event: 'bitrix_request_started', requestId, timeoutMs });
     const parts = name.split(/\s+/);
     const payload = {
       fields: {
@@ -69,15 +81,27 @@ function createRegister({ request = (...args) => fetch(...args), env = process.e
     try {
       const response = await request(endpoint.href, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload), signal: AbortSignal.timeout(15000), redirect: 'error',
+        body: JSON.stringify(payload), signal: AbortSignal.timeout(timeoutMs), redirect: 'error',
       });
       const result = await response.json();
+      const leadId = Number(result.result);
+      const confirmed = response.ok && !result.error && Number.isSafeInteger(leadId) && leadId > 0;
+      logEvent(logger, confirmed ? 'info' : 'error', {
+        event: 'bitrix_response_received', requestId, durationMs: Date.now() - startedAt,
+        status: Number.isInteger(response.status) ? response.status : null,
+        responseOk: Boolean(response.ok), confirmed,
+      });
       if (result.error) guard.release(reservation);
-      if (!response.ok || result.error || !Number.isSafeInteger(Number(result.result)) || Number(result.result) < 1) {
+      if (!confirmed) {
         return res.status(502).json({ ok: false, message: 'Битрикс24 не подтвердил создание заявки. Пожалуйста, свяжитесь с организатором.' });
       }
       return res.status(200).json({ ok: true, leadId: result.result });
-    } catch {
+    } catch (error) {
+      logEvent(logger, 'error', {
+        event: 'bitrix_request_exception', requestId, durationMs: Date.now() - startedAt,
+        errorName: typeof error?.name === 'string' ? error.name : 'Error',
+        causeCode: typeof error?.cause?.code === 'string' ? error.cause.code : null,
+      });
       return res.status(502).json({ ok: false, message: 'Не удалось получить подтверждение от Битрикс24. Пожалуйста, свяжитесь с организатором перед повторной отправкой.' });
     }
   };

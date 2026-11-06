@@ -3,6 +3,7 @@ node_modules/
 .env.*
 !.env.example
 *.log
+data/logs/
 .deploy/
 index_2025.html
 old/*.docx
