@@ -10,8 +10,12 @@ const { createRegister } = require('./api/register');
 const app = express();
 const site = express.Router();
 const basePath = (process.env.BASE_PATH || '').replace(/\/+$/, '');
+const registrationLogEnabled = !/^(0|false|off|no)$/i.test((process.env.REGISTRATION_LOG_ENABLED || 'true').trim());
 const registrationLogFile = process.env.REGISTRATION_LOG_FILE || path.join(projectRoot, 'data', 'logs', 'registration-events.jsonl');
-const register = createRegister({ logger: createEventLogger(registrationLogFile) });
+const registrationLogger = registrationLogEnabled
+  ? createEventLogger(registrationLogFile)
+  : { info() {}, error() {} };
+const register = createRegister({ logger: registrationLogger });
 app.disable('x-powered-by');
 if (process.env.TRUST_PROXY === 'loopback') app.set('trust proxy', 'loopback');
 site.use((req, res, next) => { res.setHeader('X-Content-Type-Options', 'nosniff'); next(); });

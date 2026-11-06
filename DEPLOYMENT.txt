@@ -22,7 +22,11 @@
   Формат: JSON Lines, без персональных данных и webhook.
   Права: 600; каталог создаёт systemd через LogsDirectory=clinics.
   Drop-in: /etc/systemd/system/clinics.service.d/registration-log.conf
-  Переменная .env: REGISTRATION_LOG_FILE=/var/log/clinics/registration-events.jsonl
+  Переменные .env:
+    REGISTRATION_LOG_ENABLED=true
+    REGISTRATION_LOG_FILE=/var/log/clinics/registration-events.jsonl
+  Для временного отключения журнала установить REGISTRATION_LOG_ENABLED=false
+  и перезапустить clinics.service. Код журналирования при этом сохраняется.
 
 1. Запускать сайт через Node.js (npm start). Сервер слушает 127.0.0.1:3010.
    Не публиковать корневую папку проекта как каталог статических файлов.
