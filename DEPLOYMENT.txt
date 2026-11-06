@@ -17,6 +17,13 @@
   Конфигурация: /etc/nginx/sites-available/clinic-forum.ru, порт приложения 3011.
   medregschool.ru сохраняет отдельную конфигурацию и маршрут /october26/.
 
+Журнал подтверждений регистрации:
+  Файл: /var/log/clinics/registration-events.jsonl
+  Формат: JSON Lines, без персональных данных и webhook.
+  Права: 600; каталог создаёт systemd через LogsDirectory=clinics.
+  Drop-in: /etc/systemd/system/clinics.service.d/registration-log.conf
+  Переменная .env: REGISTRATION_LOG_FILE=/var/log/clinics/registration-events.jsonl
+
 1. Запускать сайт через Node.js (npm start). Сервер слушает 127.0.0.1:3010.
    Не публиковать корневую папку проекта как каталог статических файлов.
    .env хранится только на сервере, вне доступа веб-сервера, с правами для

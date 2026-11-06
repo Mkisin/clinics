@@ -1,5 +1,7 @@
-const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
+const fs = require('node:fs');
+const path = require('node:path');
+const projectRoot = fs.realpathSync(__dirname);
+require('dotenv').config({ path: path.join(projectRoot, '.env') });
 // Проверка сертификата CRM обязательна, даже если оболочка разработки её отключала.
 if (process.env.NODE_TLS_REJECT_UNAUTHORIZED === '0') delete process.env.NODE_TLS_REJECT_UNAUTHORIZED;
 const express = require('express');
@@ -8,7 +10,7 @@ const { createRegister } = require('./api/register');
 const app = express();
 const site = express.Router();
 const basePath = (process.env.BASE_PATH || '').replace(/\/+$/, '');
-const registrationLogFile = process.env.REGISTRATION_LOG_FILE || path.join(__dirname, 'data', 'logs', 'registration-events.jsonl');
+const registrationLogFile = process.env.REGISTRATION_LOG_FILE || path.join(projectRoot, 'data', 'logs', 'registration-events.jsonl');
 const register = createRegister({ logger: createEventLogger(registrationLogFile) });
 app.disable('x-powered-by');
 if (process.env.TRUST_PROXY === 'loopback') app.set('trust proxy', 'loopback');
