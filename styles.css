@@ -78,7 +78,13 @@ h3 { margin: 0 0 14px; font-size: 18px; line-height: 1.3; font-weight: 600; }
 .review-head h3 { margin-bottom: 6px; font-size: 18px; }
 .review-head p { margin: 0; font-size: 13px; line-height: 1.4; }
 .review-card blockquote { margin: 24px 0 0; font-size: 15px; line-height: 1.6; }
-.reviews :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.reviews :focus-visible, .partners :focus-visible, .site-footer :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.partners { padding-block: 64px; background: #fff; border-top: 1px solid rgba(0, 0, 0, .08); }
+.partners h2 { margin: 0 0 34px; font-size: clamp(30px, 3vw, 42px); line-height: 1.15; }
+.partners-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 36px 64px; }
+.partner-link { display: block; width: min(100%, 420px); border-radius: 18px; transition: transform .2s ease, opacity .2s ease; }
+.partner-link:hover { transform: translateY(-3px); opacity: .82; }
+.partner-link img { display: block; width: 100%; height: auto; }
 .site-footer { padding-block: 40px; background: var(--mint); }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; align-items: center; justify-items: center; text-align: center; }
 .footer-title { margin: 0; font-size: clamp(24px, 2.1vw, 42px); font-weight: 800; line-height: 1.15; }
@@ -209,6 +215,8 @@ a.history-read:hover { background: var(--green); }
   .review-head { gap: 12px; }
   .review-head img { width: 56px; height: 56px; }
   .review-head h3 { font-size: 16px; }
+  .partners { padding-block: 48px; }
+  .partners h2 { margin-bottom: 26px; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .footer-actions { flex-wrap: wrap; }
   .history { padding-bottom: 56px; }
